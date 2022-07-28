@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //To find kth smallest or largest element in an array
+  // const input = findKthSmallestOrLargest[2,1,4,3,6,5,7], 3);
+
+  // Output
+  /* {
+  smallest: 3,
+  largest: 5,
+}
+ */
+
+  function smallest(arr, n) {
+    arr.sort(function (a, b) {
+      return a - b;
+    });
+
+    console.log("Smallest", arr[n - 1]);
+    console.log("Largest", arr[arr.length - n]);
+  }
+  console.log(smallest([1, 2, 3, 10, 11, 12], 3));
+
+  //Move all the zeroes at the end of an elements
+  const move = [1, 0, 2, 0, 0, 9, 0, 6, 7];
+  let n = move.length;
+  for (let i = 0; i < n; i++) {
+    if (move[i] === 0) {
+      move.splice(i, 1);
+      move.push(0);
+      i--;
+      n--;
+    }
+  }
+  console.log(move);
+</script>
